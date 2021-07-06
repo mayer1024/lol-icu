@@ -1,12 +1,26 @@
-import React from "react";
-import { Home } from "./page/home";
+import React, { Suspense } from "react";
 import "./App.css";
+import routeConfig from "./config/routes";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
+  const RouteComponent = routeConfig.component;
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Suspense fallback={<></>}>
+      <RouteComponent>
+        <Switch>
+          {routeConfig.chilldren.map((item) => {
+            return (
+              <Route
+                key={item.path}
+                path={item.path}
+                component={item.component}
+              />
+            );
+          })}
+        </Switch>
+      </RouteComponent>
+    </Suspense>
   );
 }
 
