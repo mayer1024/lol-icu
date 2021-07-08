@@ -9,7 +9,7 @@ function App() {
     <Suspense fallback={<></>}>
       <RouteComponent>
         <Switch>
-          {routeConfig.chilldren.map((item) => {
+          {routeConfig.children.map((item) => {
             return (
               <Route
                 key={item.path}

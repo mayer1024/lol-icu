@@ -1,0 +1,10 @@
+.root {
+  min-height: 100vh;
+}
+.content {
+  padding: 20px;
+  background: #f5f0e6;
+}
+.header {
+  background: #fff;
+}
